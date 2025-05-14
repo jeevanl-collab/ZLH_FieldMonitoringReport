@@ -1,0 +1,31 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Dialog
+        title="PDF Viewer"
+        contentHeight="80%"
+        contentWidth="100%"
+    >
+        <content>
+            <PDFViewer
+                source="{FieldMonitorModel>/sSourceSOFORM}"
+                isTrustedSource="true"
+                title="{i18n>SoFORMTitle}"
+                height="100%"
+                displayType="Embedded"
+            >
+                <layoutData>
+                    <FlexItemData growFactor="1" />
+                </layoutData>
+            </PDFViewer>
+        </content>
+        <buttons>
+            <Button
+                text="Close"
+                press="onCloseDialogPDF"
+                type="Negative"
+            />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

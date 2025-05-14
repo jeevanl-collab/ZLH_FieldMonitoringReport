@@ -1,0 +1,423 @@
+<mvc:View
+    controllerName="com.sap.lh.cs.zlhfieldmonitoring.controller.FieldMonList"
+    displayBlock="true"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns="sap.ui.table"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:u="sap.ui.unified"
+    xmlns:c="sap.ui.core"
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <m:Page
+        busyIndicatorDelay="1"
+        showHeader="false"
+    >
+        <m:subHeader>
+            <m:OverflowToolbar>
+                <m:ToolbarSpacer />
+                <m:Button
+                    icon="sap-icon://list"
+                    text="{i18n>label.soResults}"
+                    press="onPressSoResults"
+                />
+                <m:Button
+                    icon="sap-icon://pdf-reader"
+                    press="onPressSoForms"
+                />
+                <m:Button
+                    text="BPEM"
+                    press="onPressBPEM"
+                />
+            </m:OverflowToolbar>
+        </m:subHeader>
+        <m:content>
+            <Table
+                id="idFieldMonTable"
+                rows="{FieldMonitorModel>/aFieldMonList}"
+                ariaLabelledBy="title"
+                selectionMode="Single"
+            >
+                <extension>
+                    <m:OverflowToolbar style="Clear">
+                        <m:Title
+                            id="title"
+                            text="Products"
+                        />
+                        <m:ToolbarSpacer />
+                        <m:Button
+                            editable="{= ${FieldMonitorModel>/aFieldMonList}.length}"
+                            icon="sap-icon://sort"
+                            tooltip="Sort"
+                            press="handleSortButtonPressed"
+                        />
+                        <!-- <m:Button
+                            editable="{= ${FieldMonitorModel>/aFieldMonList}.length}"
+                            icon="sap-icon://filter"
+                            tooltip="filter"
+                            press="handleFilterButtonPressed"
+                        /> -->
+                    </m:OverflowToolbar>
+                </extension>
+                <columns>
+                    <Column width="11rem">
+                        <m:Label text="{i18n>label.status}" />
+                        <template>
+                            <m:Label text="{FieldMonitorModel>Status}" />
+                        </template>
+                    </Column>
+                    <Column width="7rem">
+                        <m:Label text="{i18n>label.text}" />
+                        <template>
+                            <m:Label text="{FieldMonitorModel>TEXT}" />
+                        </template>
+                    </Column>
+                    <Column
+                        width="6rem"
+                        hAlign="End"
+                    >
+                        <m:Label text="{i18n>label.log}" />
+                        <template>
+                            <m:Label text="{FieldMonitorModel>Notification}" />
+                        </template>
+                    </Column>
+                    <Column width="5rem">
+                        <m:Label text="{i18n>label.activityType}" />
+                        <template>
+                            <m:Label text="{FieldMonitorModel>ACTIVITY_TYPE}" />
+                        </template>
+                    </Column>
+                    <Column width="14rem">
+                        <m:Label text="{i18n>label.order}" />
+                        <template>
+                            <m:Label text="{FieldMonitorModel>ORDER_NO}" />
+                        </template>
+                    </Column>
+                    <Column width="5rem">
+                        <m:Label text="{i18n>label.esa}" />
+                        <template>
+                            <m:Label text="{FieldMonitorModel>ESA}" />
+                        </template>
+                    </Column>
+                    <Column width="7rem">
+                        <m:Label text="{i18n>label.billable}" />
+                        <template>
+                            <m:Label text="{FieldMonitorModel>BILLABLE}" />
+                        </template>
+                    </Column>
+                    <Column width="14rem">
+                        <m:Label text="{i18n>label.opsNo}" />
+                        <template>
+                            <m:Label text="{FieldMonitorModel>OPS_NO}" />
+                        </template>
+                    </Column>
+                    <Column width="14rem">
+                        <m:Label text="{i18n>label.opsDesc}" />
+                        <template>
+                            <m:Label text="{FieldMonitorModel>OPS_DESC}" />
+                        </template>
+                    </Column>
+                    <Column width="12rem">
+                        <m:Label text="{i18n>label.billingClass}" />
+                        <template>
+                            <m:Label text="{FieldMonitorModel>BILLING_CLASS}" />
+                        </template>
+                    </Column>
+                    <Column width="12rem">
+                        <m:Label text="{i18n>label.fieldCompletionDt}" />
+                        <template>
+                            <m:Label text="{FieldMonitorModel>FIELD_COMP_DT}" />
+                        </template>
+                    </Column>
+                    <Column
+                        width="18rem"
+                        hAlign="Center"
+                    >
+                        <m:Label text="{i18n>label.address}" />
+                        <template>
+                            <m:Label text="{FieldMonitorModel>ADDRESS}" />
+                        </template>
+                    </Column>
+                    <Column
+                        width="8rem"
+                        hAlign="Center"
+                    >
+                        <m:Label text="{i18n>label.keyNo}" />
+                        <template>
+                            <m:Label text="{FieldMonitorModel>KEY_NO}" />
+                        </template>
+                    </Column>
+                    <Column
+                        width="11rem"
+                        hAlign="Center"
+                    >
+                        <m:Label text="{i18n>label.meterNo}" />
+                        <template>
+                            <m:Label text="{FieldMonitorModel>METER_NO}" />
+                        </template>
+                    </Column>
+                    <Column
+                        width="11rem"
+                        hAlign="Center"
+                    >
+                        <m:Label text="{i18n>label.ctpt}" />
+                        <template>
+                            <m:Label text="{FieldMonitorModel>CTPT}" />
+                        </template>
+                    </Column>
+                    <Column
+                        width="11rem"
+                        hAlign="Center"
+                    >
+                        <m:Label text="{i18n>label.orderType}" />
+                        <template>
+                            <m:Label text="{FieldMonitorModel>OT}" />
+                        </template>
+                    </Column>
+                    <Column
+                        width="11rem"
+                        hAlign="Center"
+                    >
+                        <m:Label text="{i18n>label.activity}" />
+                        <template>
+                            <m:Label text="{FieldMonitorModel>ACTIVITY_DESC}" />
+                        </template>
+                    </Column>
+                    <Column
+                        width="11rem"
+                        hAlign="Center"
+                    >
+                        <m:Label text="{i18n>label.workCenterId}" />
+                        <template>
+                            <m:Label text="{FieldMonitorModel>WRKCNTR_ID}" />
+                        </template>
+                    </Column>
+                    <Column
+                        width="11rem"
+                        hAlign="Center"
+                    >
+                        <m:Label text="{i18n>label.wrkCntrDesc}" />
+                        <template>
+                            <m:Label text="{FieldMonitorModel>WRKCNTR_DESC}" />
+                        </template>
+                    </Column>
+                    <Column
+                        width="11rem"
+                        hAlign="Center"
+                    >
+                        <m:Label text="{i18n>label.descrepancy}" />
+                        <template>
+                            <m:CheckBox selected="{FieldMonitorModel>Descrepancy}"/>
+                        </template>
+                    </Column>
+                    <Column
+                        width="11rem"
+                        hAlign="Center"
+                    >
+                        <m:Label text="{i18n>label.mainActivity}" />
+                        <template>
+                            <m:Label text="{FieldMonitorModel>MAIN_ACTIVITY}" />
+                        </template>
+                    </Column>
+                    <Column
+                        width="11rem"
+                        hAlign="Center"
+                    >
+                        <m:Label text="{i18n>label.inLogStatus}" />
+                        <template>
+                            <m:Label text="{FieldMonitorModel>InLog}" />
+                        </template>
+                    </Column>
+                    <Column
+                        width="11rem"
+                        hAlign="Center"
+                    >
+                        <m:Label text="{i18n>label.outLogException}" />
+                        <template>
+                            <m:Label text="{FieldMonitorModel>OutLog}" />
+                        </template>
+                    </Column>
+                    <Column
+                        width="11rem"
+                        hAlign="Center"
+                    >
+                        <m:Label text="{i18n>label.newMeterLocation}" />
+                        <template>
+                            <m:Label text="{FieldMonitorModel>NEW_METER_LOC}" />
+                        </template>
+                    </Column>
+                    <Column
+                        width="11rem"
+                        hAlign="Center"
+                    >
+                        <m:Label text="{i18n>label.review}" />
+                        <template>
+                            <m:CheckBox
+                                selected="{
+								path: 'FieldMonitorModel>REVIEW'
+							}"
+                                editable="{FieldMonitorModel>REVIEW_EDITABLE}"
+                            />
+                        </template>
+                    </Column>
+                    <Column
+                        width="11rem"
+                        hAlign="Center"
+                    >
+                        <m:Label text="{i18n>label.by}" />
+                        <template>
+                            <m:Label
+                                text="{= !${FieldMonitorModel>REVIEW} ? '' : ${FieldMonitorModel>BY_USER}}"
+                            />
+                        </template>
+                    </Column>
+                    <Column
+                        width="11rem"
+                        hAlign="Center"
+                    >
+                        <m:Label text="{i18n>label.on}" />
+                        <template>
+                            <m:Label
+                                id="labelId"
+                                text="{= !${FieldMonitorModel>REVIEW} ? '' : ${path:'FieldMonitorModel>ON_SYSTEM', type:'sap.ui.model.odata.type.Date'}}"
+                            />
+                        </template>
+                    </Column>
+                    <Column
+                        width="11rem"
+                        hAlign="Center"
+                    >
+                        <m:Label text="{i18n>label.at}" />
+                        <template>
+                            <m:Label
+                                text="{= !${FieldMonitorModel>REVIEW} ? '' : ${path:'FieldMonitorModel>ON_TIME', type:'sap.ui.model.odata.type.Time'}}"
+                            />
+                        </template>
+                    </Column>
+                    <Column
+                        width="11rem"
+                        hAlign="Center"
+                    >
+                        <m:Label text="{i18n>label.basicStartDt}" />
+                        <template>
+                            <m:Label
+                                text="{path:'FieldMonitorModel>BASIC_START_DT_FROM', type: 'sap.ca.ui.model.type.Date'}"
+                            />
+                        </template>
+                    </Column>
+                    <Column
+                        width="11rem"
+                        hAlign="Center"
+                    >
+                        <m:Label text="{i18n>label.finishDt}" />
+                        <template>
+                            <m:Label
+                                text="{path:'FieldMonitorModel>FINISH_DT_FROM', type: 'sap.ui.model.type.Date'}"
+                            />
+                        </template>
+                    </Column>
+                    <Column
+                        width="11rem"
+                        hAlign="Center"
+                    >
+                        <m:Label text="{i18n>label.mobileCompletionDt}" />
+                        <template>
+                            <m:Label
+                                text="{path:'FieldMonitorModel>MOBILE_COMPLETION_DT',type:'sap.ui.model.odata.type.Date'}"
+                            />
+                        </template>
+                    </Column>
+                    <Column
+                        width="11rem"
+                        hAlign="Center"
+                    >
+                        <m:Label text="{i18n>label.mobileCompletionTm}" />
+                        <template>
+                            <m:Label
+                                text="{path:'FieldMonitorModel>MOBILE_COMPLETION_TIME',type:'sap.ui.model.odata.type.Time'}"
+                            />
+                        </template>
+                    </Column>
+                    <Column
+                        width="11rem"
+                        hAlign="Center"
+                    >
+                        <m:Label text="{i18n>label.createdBy}" />
+                        <template>
+                            <m:Label text="{FieldMonitorModel>CREATED_BY}" />
+                        </template>
+                    </Column>
+                    <Column
+                        width="11rem"
+                        hAlign="Center"
+                    >
+                        <m:Label text="{i18n>label.createdOn}" />
+                        <template>
+                            <m:Label
+                                text="{path:'FieldMonitorModel>CREATED_ON_FROM', type: 'sap.ca.ui.model.type.Date'}"
+                            />
+                        </template>
+                    </Column>
+                    <Column
+                        width="11rem"
+                        hAlign="Center"
+                    >
+                        <m:Label text="{i18n>label.completedBy}" />
+                        <template>
+                            <m:Label
+                                text="{path:'FieldMonitorModel>CREATED_ON', type: 'sap.ca.ui.model.type.Date'}"
+                            />
+                        </template>
+                    </Column>
+                    <Column
+                        width="11rem"
+                        hAlign="Center"
+                    >
+                        <m:Label text="{i18n>label.plantSection}" />
+                        <template>
+                            <m:Label text="{FieldMonitorModel>PLANT_SECTION}" />
+                        </template>
+                    </Column>
+                    <Column
+                        width="11rem"
+                        hAlign="Center"
+                    >
+                        <m:Label text="{i18n>label.fieldsNotes}" />
+                        <template>
+                            <m:Label text="{FieldMonitorModel>FIELDS_NOTES}" />
+                        </template>
+                    </Column>
+                    <Column
+                        width="11rem"
+                        hAlign="Center"
+                    >
+                        <m:Label text="{i18n>label.activityPerformed}" />
+                        <template>
+                            <m:Label
+                                text="{FieldMonitorModel>ACTIVITY_PERFORMED}"
+                            />
+                        </template>
+                    </Column>
+                    <Column
+                        width="11rem"
+                        hAlign="Center"
+                    >
+                        <m:Label text="{i18n>label.workArea}" />
+                        <template>
+                            <m:Label text="{FieldMonitorModel>WORK_AREA}" />
+                        </template>
+                    </Column>
+                </columns>
+            </Table>
+        </m:content>
+        <m:footer>
+            <m:Toolbar>
+                <m:ToolbarSpacer />
+                <m:Button
+                    text="Submit"
+                    press="onSubmitFieldMonList"
+                />
+            </m:Toolbar>
+        </m:footer>
+    </m:Page>
+</mvc:View>

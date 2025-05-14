@@ -1,0 +1,45 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Dialog
+        id="idDialog"
+        title="BPEM Cases"
+    >
+        <content>
+            <List
+                id="idList"
+                items="{FieldMonitorModel>/BPEMList}"
+                type="Navigation"
+            >
+                <CustomListItem>
+                    <HBox>
+                        <VBox
+                            class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom"
+                        >
+                            <Link
+                                text="{FieldMonitorModel>Casenr}"
+                                press="onPressCaseId"
+                            />
+                            <Label text="{FieldMonitorModel>Casetxt}" />
+                        </VBox>
+                    </HBox>
+                </CustomListItem>
+            </List>
+        </content>
+        <footer>
+            <Toolbar>
+                <content>
+                    <ToolbarSpacer />
+                    <Button
+                        id="Reject"
+                        text="Close"
+                        type="Reject"
+                        press="._closeDialog"
+                        ariaHasPopup="Dialog"
+                    />
+                </content>
+            </Toolbar>
+        </footer>
+    </Dialog>
+</core:FragmentDefinition>

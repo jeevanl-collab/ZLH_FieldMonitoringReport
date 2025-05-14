@@ -1,0 +1,54 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+>
+    <f:SimpleForm
+        editable="true"
+        layout="ResponsiveGridLayout"
+        labelSpanXL="3"
+        labelSpanL="3"
+        labelSpanM="3"
+        labelSpanS="12"
+        adjustLabelSpan="false"
+        emptySpanXL="4"
+        emptySpanL="4"
+        emptySpanM="4"
+        emptySpanS="0"
+        columnsXL="1"
+        columnsL="1"
+        columnsM="1"
+        title="Installation Data"
+        singleContainerFullSize="false"
+    >
+        <f:content>
+            <Label text="Funcational Location" />
+            <MultiInput
+                id="idFuncLoc"
+                width="70%"
+                showValueHelp="false"
+                showClearIcon="true"
+                suggestionItemSelected=".onSelectFuncLoc"
+                suggestionRows="{
+				path: 'ORDOPRService>/PlannerGroupSet'
+                }"
+            >
+                <suggestionColumns>
+                    <Column>
+                        <Label text="Group ID" />
+                    </Column>
+                    <Column>
+                        <Label text="Description" />
+                    </Column>
+                </suggestionColumns>
+                <suggestionRows>
+                    <ColumnListItem>
+                        <Label text="{ORDOPRService>PlannerGroupID}" />
+                        <Label text="{ORDOPRService>Description}" />
+                    </ColumnListItem>
+                </suggestionRows>
+            </MultiInput>
+        </f:content>
+    </f:SimpleForm>
+</core:FragmentDefinition>

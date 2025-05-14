@@ -1,0 +1,56 @@
+<mvc:View
+    controllerName="com.sap.lh.cs.zlhfieldmonitoring.controller.SoForm"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <IconTabBar
+        id="idIconTabBarMeterDetails"
+        expanded="{device>/isNoPhone}"
+        class="sapUiResponsiveContentPadding"
+    >
+        <items>
+            <IconTabFilter
+                text="{i18n>meterDetailsText}"
+                key="info"
+            >
+                <core:Fragment
+                    fragmentName="com.sap.lh.cs.zlhfieldmonitoring.fragment.SOForm.meterDetails"
+                    type="XML"
+                />
+            </IconTabFilter>
+            <IconTabFilter
+                text="{i18n>ctptText}"
+                key="attachments"
+            >
+                <core:Fragment
+                    fragmentName="com.sap.lh.cs.zlhfieldmonitoring.fragment.SOForm.CTPT"
+                    type="XML"
+                />
+            </IconTabFilter>
+        </items>
+    </IconTabBar>
+</mvc:View>
+        <!-- <items>
+            <IconTabFilter
+                text="Meter Details"
+                key="info"
+            >
+                <core:Fragment
+                    fragmentName="com.sap.lh.cs.zlhfieldmonitoring.fragment.SOForm.meterDetails"
+                    type="XML"
+                />
+            </IconTabFilter>
+            <IconTabFilter
+                text="CT/PT"
+                key="attachments"
+            >
+                <core:Fragment
+                    fragmentName="com.sap.lh.cs.zlhfieldmonitoring.fragment.SOForm.CTPT"
+                    type="XML"
+                />
+            </IconTabFilter>
+        </items>
+    </IconTabBar>
+</mvc:View> -->

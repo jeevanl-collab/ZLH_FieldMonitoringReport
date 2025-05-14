@@ -1,0 +1,97 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+>
+    <f:SimpleForm
+        editable="true"
+        layout="ResponsiveGridLayout"
+        labelSpanXL="3"
+        labelSpanL="3"
+        labelSpanM="3"
+        labelSpanS="12"
+        adjustLabelSpan="false"
+        emptySpanXL="4"
+        emptySpanL="4"
+        emptySpanM="4"
+        emptySpanS="0"
+        columnsXL="1"
+        columnsL="1"
+        columnsM="1"
+        title="Service Order Dates"
+        singleContainerFullSize="false"
+    >
+        <f:content>
+            <Label text="Completed On" />
+            <DatePicker
+                id="idcompletedOnDatePicker"
+                width="80%"
+                valueFormat="YYYY-MM-dd"
+                displayFormat="dd.MM.yyyy"
+                value="{FieldMonSelModel>/oServiceOrderDates/CompletedOn/From}"
+                change="OnChangeCompletedOnDate"
+                
+            />
+            <DatePicker
+                id="idcompletedOnDatePickerTo"
+                width="80%"
+                valueFormat="YYYY-MM-dd"
+                displayFormat="dd.MM.yyyy"
+                value="{FieldMonSelModel>/oServiceOrderDates/CompletedOn/To}"
+                change="OnChangeCompletedOnDate"
+            />
+            <!-- YYYYddMM -->
+            <Label text="Main Activity" />
+            <MultiComboBox
+                id="idmainActivity"
+                width="350px"
+                items="{
+				path: '/Activity_TypeSet',
+				sorter: { path: 'ActivityType' }
+			}"
+            >
+                <core:Item
+                    key="{ActivityType}"
+                    text="{Description}"
+                />
+            </MultiComboBox>
+
+            <Label text="Created On" />
+            <DatePicker
+                id="idcreatedOnDatePicker"
+                width="80%"
+                valueFormat="YYYY-MM-dd"
+                displayFormat="dd.MM.yyyy"
+                value="{FieldMonSelModel>/oServiceOrderDates/CreatedOn/From}"
+                change="onchangeCreatedOn"
+            />
+            <DatePicker
+                id="idcreatedOnDatePickerTo"
+                width="80%"
+                valueFormat="YYYY-MM-dd"
+                displayFormat="dd.MM.yyyy"
+                value="{FieldMonSelModel>/oServiceOrderDates/CreatedOn/To}"
+                change="onchangeCreatedOn"
+            />
+
+            <Label text="Basic Start" />
+            <DatePicker
+                id="idbasicStartDatePicker"
+                width="80%"
+                valueFormat="YYYY-MM-dd"
+                displayFormat="dd.MM.yyyy"
+                value="{FieldMonSelModel>/oServiceOrderDates/BasicStart/From}"
+                change="onChangeBasicStartDate"
+            />
+            <DatePicker
+                id="idbasicStartDatePickerTo"
+                width="80%"
+                valueFormat="YYYY-MM-dd"
+                displayFormat="dd.MM.yyyy"
+                value="{FieldMonSelModel>/oServiceOrderDates/BasicStart/To}"
+                change="onChangeBasicStartDate"
+            />
+        </f:content>
+    </f:SimpleForm>
+</core:FragmentDefinition>

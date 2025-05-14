@@ -1,0 +1,87 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+>
+    <f:SimpleForm
+        editable="true"
+        layout="ResponsiveGridLayout"
+        labelSpanXL="3"
+        labelSpanL="3"
+        labelSpanM="3"
+        labelSpanS="12"
+        adjustLabelSpan="false"
+        emptySpanXL="4"
+        emptySpanL="4"
+        emptySpanM="4"
+        emptySpanS="0"
+        columnsXL="1"
+        columnsL="1"
+        columnsM="1"
+        title="Service Order Data"
+        singleContainerFullSize="false"
+    >
+        <f:content>
+            <Label text="Service Order" />
+            <MultiInput
+                id="idServiceOrder"
+                width="60%"
+                showValueHelp="false"
+                tokenUpdate="onOrderNoTokenUpdate"
+                submit="onSubmitOrderNumber"
+                valueHelpRequest=".onValueHelp"
+                suggestionItemSelected=".onOrderSuggestionItemPress"
+                suggestionRows="{
+				path: 'OEBmainService>/Service_OrderSet'
+			}"
+            >
+                <suggestionColumns>
+                    <Column>
+                        <Label text="Order ID" />
+                    </Column>
+                    <Column>
+                        <Label text="Order Type" />
+                    </Column>
+                    <Column>
+                        <Label text="Description" />
+                    </Column>
+                </suggestionColumns>
+                <suggestionRows>
+                    <ColumnListItem>
+                        <Label text="{OEBmainService>OrderId}" />
+                        <Label text="{OEBmainService>OrderType}" />
+                        <Label text="{OEBmainService>Description}" />
+                    </ColumnListItem>
+                </suggestionRows>
+            </MultiInput>
+
+            <Label text="Order Type" />
+            <MultiInput
+                id="idOrderType"
+                width="60%"
+                showValueHelp="false"
+                valueHelpRequest=".onValueHelpRequested"
+                suggestionItemSelected=".onOrderTypeSuggestionItemPress"
+                suggestionRows="{
+				path: 'OEBmainService>/Order_TYpeSet'
+			}"
+            >
+                <suggestionColumns>
+                    <Column>
+                        <Label text="Order Type" />
+                    </Column>
+                    <Column>
+                        <Label text="Description" />
+                    </Column>
+                </suggestionColumns>
+                <suggestionRows>
+                    <ColumnListItem>
+                        <Label text="{OEBmainService>OrderType}" />
+                        <Label text="{OEBmainService>Description}" />
+                    </ColumnListItem>
+                </suggestionRows>
+            </MultiInput>
+        </f:content>
+    </f:SimpleForm>
+</core:FragmentDefinition>

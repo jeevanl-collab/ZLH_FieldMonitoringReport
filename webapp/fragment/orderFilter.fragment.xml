@@ -1,0 +1,37 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+>
+    <f:Form title="Filter" binding="{path: 'FieldMonSelModel>/oSelected/oFilter'}">
+        <f:layout>
+            <f:ResponsiveGridLayout />
+        </f:layout>
+        <f:FormContainer>
+            <f:FormElement>
+                <f:fields>
+                    <CheckBox text="Mobile Workforce" selected="{FieldMonSelModel>bMobileWorkForce}"/>
+                </f:fields>
+            </f:FormElement>
+            <f:FormElement>
+                <f:fields>
+                    <CheckBox text="only Op. conf. from the field" selected="{FieldMonSelModel>bOnlyOpConfield}"/>
+                </f:fields>
+            </f:FormElement>
+            <f:FormElement>
+                <f:fields>
+                    <CheckBox text="Show only CPT TRs/ Metering Tank" selected="{FieldMonSelModel>bShowOnlyMeterTank}"/>
+                </f:fields>
+            </f:FormElement>
+            <!-- <f:FormElement>
+                <f:label>
+                    <Label text="Layout" />
+                </f:label>
+                <f:fields>
+                    <Input value="{FieldMonSelModel>sLayout}"/>
+                </f:fields>
+            </f:FormElement> -->
+        </f:FormContainer>
+    </f:Form>
+</core:FragmentDefinition>

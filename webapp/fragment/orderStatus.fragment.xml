@@ -1,0 +1,45 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+>
+    <f:SimpleForm
+        editable="true"
+        layout="ResponsiveGridLayout"
+        labelSpanXL="3"
+        labelSpanL="3"
+        labelSpanM="3"
+        labelSpanS="12"
+        adjustLabelSpan="false"
+        emptySpanXL="4"
+        emptySpanL="4"
+        emptySpanM="4"
+        emptySpanS="0"
+        columnsXL="1"
+        columnsL="1"
+        columnsM="1"
+        title="Order Status"
+        singleContainerFullSize="false"
+    >
+        <f:content>
+            <Label text="Order Status" />
+            <MultiComboBox
+                id="idOrderStatus"
+                selectionChange="handleSelectionChange"
+                selectionFinish="handleSelectionFinish"
+                selectedKeys="{FieldMonSelModel>/OrderStatusSelected}"
+                width="350px"
+                items="{
+				path: 'FieldMonSelModel>/OrderStatus',
+				sorter: { path: 'Name' }
+			          }"
+            >
+                <core:Item
+                    key="{FieldMonSelModel>Key}"
+                    text="{FieldMonSelModel>description}"
+                />
+            </MultiComboBox>
+        </f:content>
+    </f:SimpleForm>
+</core:FragmentDefinition>

@@ -1,0 +1,79 @@
+<core:FragmentDefinition
+    xmlns="sap.ui.table"
+    xmlns:core="sap.ui.core"
+    xmlns:m="sap.m"
+>
+    <Table
+        id="idTableCTPT"
+        selectionMode="None"
+    >
+        <columns>
+            <Column>
+                <m:Label text="{i18n>orderNumber}" />
+                <template>
+                    <m:Text text="{OrderID}" />
+                </template>
+            </Column>
+            <Column>
+                <m:Label text="{i18n>oldEquipmentSerialNum}" />
+                <template>
+                    <m:Text text="{EventID}" />
+                </template>
+            </Column>
+            <Column>
+                <m:Label text="{i18n>oldManufSerialNum}" />
+                <template>
+                    <m:Text text="{RevNum}" />
+                </template>
+            </Column>
+            <Column>
+                <m:Label text="{i18n>deviceCategory}" />
+                <template>
+                    <m:Text text="{RowNum}" />
+                </template>
+            </Column>
+            <Column>
+                <m:Label text="{i18n>deviceRemoval}" />
+                <template>
+                    <m:Text text="{Serialnumber}" />
+                </template>
+            </Column>
+            <Column>
+                <m:Label text="{i18n>newEquipmentSerialNum}" />
+                <template>
+                    <m:Text text="{Manufserialnumber}" />
+                </template>
+            </Column>
+            <Column>
+                <m:Label text="{i18n>newManufSerialNum}" />
+                <template>
+                    <m:Text text="{Devicecategory}" />
+                </template>
+            </Column>
+            <Column>
+                <m:Label text="{i18n>newDeviceCategory}" />
+                <template>
+                    <m:Text text="{NEW_DEVICE_CATEGORY}" />
+                </template>
+            </Column>
+            <Column>
+                <m:Label text="{i18n>newFuncClass}" />
+                <template>
+                    <m:Text text="{newfuncclass}" />
+                </template>
+            </Column>
+            <Column>
+                <m:Label text="{i18n>newTxWinDenom}" />
+                <template>
+                    <m:Text text="{newtxwindenom}" />
+                </template>
+            </Column>
+            <Column>
+                <m:Label text="{i18n>newTxWinNumber}" />
+                <template>
+                    <m:Text text="{Newtxwindnumber}" />
+                </template>
+            </Column>
+        </columns>
+    </Table>
+</core:FragmentDefinition>

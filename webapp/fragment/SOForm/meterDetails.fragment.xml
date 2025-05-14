@@ -1,0 +1,360 @@
+<core:FragmentDefinition
+    xmlns="sap.ui.table"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:m="sap.m"
+>
+    <Table
+        id="meterDetailsTable"
+        selectionMode="None"
+        showNoData="true"
+    >
+        <columns>
+            <Column width="170px">
+                <m:Label text="Order Number" />
+                <template>
+                    <m:Text text="{OrderID}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="Operation" />
+                <template>
+                    <m:Text text="{Operation}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="Counter" />
+                <template>
+                    <m:Text text="{Counter}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="Additional Notes" />
+                <template>
+                    <m:Text text="{additional_notes}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="Additional Info" />
+                <template>
+                    <m:Text text="{additional_info}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="Meter Number" />
+                <template>
+                    <m:Text text="{UtilitiesDevice}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="New Meter Number" />
+                <template>
+                    <m:Text text="{new_meter_num}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="Old Meter read KWH" />
+                <template>
+                    <m:Text text="{old_meter_read_kwh}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="New Meter read KWH" />
+                <template>
+                    <m:Text text="{new_meter_read_kwh}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="Security Seal number" />
+                <template>
+                    <m:Text text="{new_security_seal}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="Corrected Tx" />
+                <template>
+                    <m:Text text="{corrected_tx}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="New Tx Num" />
+                <template>
+                    <m:Text text="{new_tx_num}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="Old Meter read W" />
+                <template>
+                    <m:Text text="{old_meter_read_w}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="Old Meter read VA" />
+                <template>
+                    <m:Text text="{old_meter_read_va}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="New Meter read W" />
+                <template>
+                    <m:Text text="{new_meter_read_w}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="New Meter read VA" />
+                <template>
+                    <m:Text text="{new_meter_read_va}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="New Manufacturing ser No" />
+                <template>
+                    <m:Text text="{Manufserialnumber}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="Old delivered read KWH" />
+                <template>
+                    <m:Text text="{old_delivered_reading_kwh}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="Old delivered read W" />
+                <template>
+                    <m:Text text="{old_delivered_reading_w}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="Old delivered read VA" />
+                <template>
+                    <m:Text text="{old_delivered_reading_va}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="Old received read KWH" />
+                <template>
+                    <m:Text text="{old_recieved_reading_kwh}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="Old received read W" />
+                <template>
+                    <m:Text text="{old_recieved_reading_w}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="New delivered read KWH" />
+                <template>
+                    <m:Text text="{new_delivered_reading_kwh}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="New delivered read W" />
+                <template>
+                    <m:Text text="{new_delivered_reading_w}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="New delivered read VA" />
+                <template>
+                    <m:Text text="{new_delivered_reading_va}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="New received read KWH" />
+                <template>
+                    <m:Text text="{new_recieved_reading_kwh}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="New delivered read W" />
+                <template>
+                    <m:Text text="{new_recieved_reading_w}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="New delivered read VA" />
+                <template>
+                    <m:Text text="{new_recieved_reading_va}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="Old communication equipment number" />
+                <template>
+                    <m:Text text="{ex_comm_equip}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="Old Communication address" />
+                <template>
+                    <m:Text text="{ex_comm_addr}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="Read only password" />
+                <template>
+                    <m:Text text="{ex_readonly_pwd}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="New read only password" />
+                <template>
+                    <m:Text text="{new_readonly_pwd}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="New communication equipment number" />
+                <template>
+                    <m:Text text="{new_comm_equip}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="New Communication address" />
+                <template>
+                    <m:Text text="{new_comm_addr}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="New billing password" />
+                <template>
+                    <m:Text text="{new_billing_pwd}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="Billable Flag Indicator" />
+                <template>
+                    <m:Text text="{Billable}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="Order Complete Date" />
+                <template>
+                    <m:Text text="{Complete_date}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="Main Activity" />
+                <template>
+                    <m:Text text="{Main_Activity}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="Order Complete Time" />
+                <template>
+                    <m:Text
+                        text="{path : 'Completed_Time', type: 'sap.ui.model.odata.type.DateTime'}"
+                    />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="NEW_METER_LOC" />
+                <template>
+                    <m:Text text="{UtilsDeviceLocationLocation}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="COMPLETE_BY" />
+                <template>
+                    <m:Text text="{COMPLETE_BY}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="VERBAL" />
+                <template>
+                    <m:Text text="{VERBAL}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="UNIT_ID" />
+                <template>
+                    <m:Text text="{UNIT_ID}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="TIME_SYNC_REQ" />
+                <template>
+                    <m:Text text="{TIME_SYNC_REQ}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="SET_MPASS" />
+                <template>
+                    <m:Text text="{SET_MPASS}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="INSTALL_RF" />
+                <template>
+                    <m:Text text="{INSTALL_RF}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="INVESTIGATION_REQ" />
+                <template>
+                    <m:Text text="{INVESTIGATION_REQ}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="CONVERT_EL" />
+                <template>
+                    <m:Text text="{CONVERT_EL}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="INTERVAL_READY" />
+                <template>
+                    <m:Text text="{INTERVAL_READY}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="IVP" />
+                <template>
+                    <m:Text text="{IVP}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="OLD_METER_ACTION" />
+                <template>
+                    <m:Text text="{OLD_METER_ACTION}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="MAN_HRS" />
+                <template>
+                    <m:Text text="{MAN_HRS}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="TRUCK_HRS" />
+                <template>
+                    <m:Text text="{TRUCK_HRS}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="OTHER_HRS" />
+                <template>
+                    <m:Text text="{OTHER_HRS}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="REMOVED" />
+                <template>
+                    <m:Text text="{REMOVED}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="CHARGE_ACCT" />
+                <template>
+                    <m:Text text="{CHARGE_ACCT}" />
+                </template>
+            </Column>
+            <Column width="170px">
+                <m:Label text="FIELD_RETURN_REASON" />
+                <template>
+                    <m:Text text="{FIELD_RETURN_REASON}" />
+                </template>
+            </Column>
+        </columns>
+    </Table>
+</core:FragmentDefinition>
