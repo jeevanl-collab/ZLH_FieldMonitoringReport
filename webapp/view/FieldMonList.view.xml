@@ -365,7 +365,7 @@
                         <m:Label text="{i18n>label.completedBy}" />
                         <template>
                             <m:Label
-                                text="{path:'FieldMonitorModel>CREATED_BY'}"
+                                text="{path:'FieldMonitorModel>COMPLETED_BY'}"
                             />
                         </template>
                     </Column>
