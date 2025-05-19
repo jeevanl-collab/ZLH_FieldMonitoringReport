@@ -6,72 +6,122 @@
     <Table
         id="idTableCTPT"
         selectionMode="None"
+        rows="{path: 'CTPTModel>/CTPT'}"
     >
         <columns>
-            <Column>
+            <Column
+               visible="false"
+                width="9rem"
+                hAlign="Center"
+            >
+                <m:Label text="Eid" />
+                <template>
+                    <m:Text text="{CTPTModel>eid}" />
+                </template>
+            </Column>
+            <Column
+                width="9rem"
+                hAlign="Center"
+            >
                 <m:Label text="{i18n>orderNumber}" />
                 <template>
-                    <m:Text text="{OrderID}" />
+                    <m:Text text="{CTPTModel>OrderID}" />
                 </template>
             </Column>
-            <Column>
+            <Column
+                width="12rem"
+                hAlign="End"
+            >
                 <m:Label text="{i18n>oldEquipmentSerialNum}" />
                 <template>
-                    <m:Text text="{EventID}" />
+                    <m:Text text="{CTPTModel>Serialnumber}" />
                 </template>
             </Column>
-            <Column>
+            <Column
+                width="12rem"
+                hAlign="Center"
+            >
                 <m:Label text="{i18n>oldManufSerialNum}" />
                 <template>
-                    <m:Text text="{RevNum}" />
+                    <m:Text text="{CTPTModel>Manufserialnumber}" />
                 </template>
             </Column>
-            <Column>
+            <Column
+                width="9rem"
+                hAlign="Center"
+            >
                 <m:Label text="{i18n>deviceCategory}" />
                 <template>
-                    <m:Text text="{RowNum}" />
+                    <m:Text text="{CTPTModel>Devicecategory}" />
                 </template>
             </Column>
-            <Column>
+            <Column
+                width="5rem"
+                hAlign="Center"
+            >
                 <m:Label text="{i18n>deviceRemoval}" />
                 <template>
-                    <m:Text text="{Serialnumber}" />
+                    <m:Text
+                        text="{CTPTModel>Deviceremoval}"
+                        wrapping="true"
+                    />
                 </template>
             </Column>
-            <Column>
+            <Column
+                width="13rem"
+                hAlign="Center"
+            >
                 <m:Label text="{i18n>newEquipmentSerialNum}" />
                 <template>
-                    <m:Text text="{Manufserialnumber}" />
+                    <m:Text text="{CTPTModel>Newserialnumber}" />
                 </template>
             </Column>
-            <Column>
+            <Column
+                width="9rem"
+                hAlign="Center"
+            >
                 <m:Label text="{i18n>newManufSerialNum}" />
                 <template>
-                    <m:Text text="{Devicecategory}" />
+                    <m:Text text="{CTPTModel>Newmanufserialnumber}" />
                 </template>
             </Column>
-            <Column>
+            <Column
+                width="9rem"
+                hAlign="Center"
+            >
                 <m:Label text="{i18n>newDeviceCategory}" />
                 <template>
-                    <m:Text text="{NEW_DEVICE_CATEGORY}" />
+                    <m:Text
+                        text="{CTPTModel>Newdevicecategory}"
+                        wrapping="true"
+                    />
                 </template>
             </Column>
-            <Column>
+            <Column
+                width="9rem"
+                hAlign="Center"
+            >
                 <m:Label text="{i18n>newFuncClass}" />
                 <template>
-                    <m:Text text="{newfuncclass}" />
+                    <m:Text text="{CTPTModel>newfuncclass}" />
                 </template>
             </Column>
-            <Column>
+            <Column
+                width="6rem"
+                hAlign="Center"
+            >
                 <m:Label text="{i18n>newTxWinDenom}" />
                 <template>
-                    <m:Text text="{newtxwindenom}" />
+                    <m:Text text="{CTPTModel>newtxwindenom}" />
                 </template>
             </Column>
-            <Column>
+            <Column
+                width="9rem"
+                hAlign="Center"
+            >
                 <m:Label text="{i18n>newTxWinNumber}" />
                 <template>
-                    <m:Text text="{Newtxwindnumber}" />
+                    <m:Text text="{CTPTModel>Newtxwindnumber}" />
                 </template>
             </Column>
         </columns>
