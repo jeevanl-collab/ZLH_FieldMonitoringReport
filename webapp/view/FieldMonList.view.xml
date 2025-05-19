@@ -365,7 +365,7 @@
                         <m:Label text="{i18n>label.completedBy}" />
                         <template>
                             <m:Label
-                                text="{path:'FieldMonitorModel>CREATED_BY', type: 'sap.ca.ui.model.type.Date'}"
+                                text="{path:'FieldMonitorModel>CREATED_BY'}"
                             />
                         </template>
                     </Column>
